@@ -31,7 +31,7 @@ def get_member_name(conn: sqlite3.Connection, mid: str) -> Optional[str]:
 def get_book_info(conn: sqlite3.Connection, bid: str) -> Optional[Dict[str, Any]]:
  
     cursor = conn.cursor()
-    cursor.execute("SELECT btitle, bprice, bstock FROM book WHERE bid = ?", (bid,))
+    cursor.execute("SELECT btitle, bprice, bstock FROM book WHERE bid = ?", (bid))
     row = cursor.fetchone()
     if row:
         return {
